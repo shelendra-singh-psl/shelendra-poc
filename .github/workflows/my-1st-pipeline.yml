@@ -8,12 +8,14 @@ jobs:
         run: echo "Building"
         
   testjob:
+    needs: buildjob
     runs-on: ubuntu-latest
     steps:
        - name: Application testing
          run: echo "Tetsing"
   
   deployjob:
+    needs: testjob
     runs-on: ubuntu-latest
     steps:
        - name: Application deploying
