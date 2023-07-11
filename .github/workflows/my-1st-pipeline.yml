@@ -8,6 +8,7 @@ jobs:
         run: |
           sudo apt update
           sudo apt install awscli -y
+          echo "Next Command will be displaying AWS Version"
           aws --version
           
           
