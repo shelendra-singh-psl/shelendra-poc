@@ -1,0 +1,6 @@
+name: my-1st-pipeline
+on: workflow_dispatch
+  build_job:
+    name: Build Application
+    runs-on: ubuntu-latest
+    run: echo "Application is building"
