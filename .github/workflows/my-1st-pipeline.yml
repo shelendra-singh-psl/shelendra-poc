@@ -4,32 +4,19 @@ jobs:
   buildjob:
      runs-on: ubuntu-latest
      steps:
-      - name: Build Application
-        run: echo "Building"
-        
-  testjob:
-    needs: buildjob
-    runs-on: ubuntu-latest
-    steps:
-       - name: Application testing
-         run: echo "Tetsing"
-  
-  deployjob:
-    needs: testjob
-    runs-on: ubuntu-latest
-    steps:
-       - name: Application deploying
-         run: echo "Deploying"
-    
-         
+      - name: Install aws Cli
+        run: |
+          sudo apt update
+          sudo apt install awscli -y
+          aws --version
+          
+          
 
-      
-    
+
+
+          
         
-   
-    
-    
- 
+  
        
         
       
