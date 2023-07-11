@@ -5,17 +5,7 @@ jobs:
      runs-on: ubuntu-latest
      steps:
       - name: Install aws Cli
-        run: |
-          sudo apt update
-          sudo apt install awscli -y
-          echo "Next Command will be displaying AWS Version"
-          aws --version
-  testrunner:
-    needs: buildjob  
-    runs-on: ubuntu-latest
-    steps:
-      - name: test runner
-        run: aws --version
+        run: echo $Date
         
       
     
