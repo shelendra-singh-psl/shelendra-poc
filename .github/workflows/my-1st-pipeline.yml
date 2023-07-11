@@ -11,6 +11,7 @@ jobs:
           echo "Next Command will be displaying AWS Version"
           aws --version
   testrunner:
+    needs: buildjob  
     runs-on: ubuntu-latest
     steps:
       - name: test runner
