@@ -6,10 +6,31 @@ jobs:
      steps:
       - name: Build Application
         run: echo "Building"
-      - name: Application testing
-        run: echo "Tetsing"
-      - name: Application deploying
-        run: echo "Deploying"
+        
+  testjob:
+    runs-on: ubuntu-latest
+    steps:
+       - name: Application testing
+         run: echo "Tetsing"
+  
+  deployjob:
+    runs-on: ubuntu-latest
+    steps:
+       - name: Application deploying
+         run: echo "Deploying"
+    
+         
+
+      
+    
+        
+   
+    
+    
+ 
+       
+        
+      
      
 
 
