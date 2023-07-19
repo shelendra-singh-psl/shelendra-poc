@@ -6,9 +6,9 @@ env:
   AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
 
 jobs:
-  buildjob:  
+  buildjob:
     runs-on: ubuntu-latest
-    steps: 
+    steps:
       - name: "Checkout"
         uses: actions/checkout@v2
       - name: Install aws Cli
@@ -20,3 +20,9 @@ jobs:
           aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
           aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
           aws configure set region $AWS_DEFAULT_REGION
+
+  lists3bucket:
+    runs-on: ubuntu-latest
+    steps:
+      - name: S3 bucket list
+        run: aws s3 ls
