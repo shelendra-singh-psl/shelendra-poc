@@ -4,8 +4,10 @@ jobs:
   buildjob:
      runs-on: ubuntu-latest
      steps:
-      - name: Install aws Cli
-        run: echo $TEST_T
+       - name: 'Checkout'
+         uses: actions/checkout@v2
+       - name: List
+         run: ls
         
       
     
