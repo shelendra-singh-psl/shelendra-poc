@@ -23,6 +23,7 @@ jobs:
 
   lists3bucket:
     runs-on: ubuntu-latest
+    needs: buildjob
     steps:
       - name: S3 bucket list
         run: aws s3 ls
