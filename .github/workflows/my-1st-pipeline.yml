@@ -6,7 +6,7 @@ env:
   AWS_DEFAULT_REGION: ${{ secrets.AWS_DEFAULT_REGION }}
 
 jobs:
-  buildjob:
+  Pre-requisite:
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout"   
@@ -21,6 +21,10 @@ jobs:
           aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
           aws configure set region $AWS_DEFAULT_REGION
           git branch
+          sudo apt install -y nodejs
+          sudo node -v
+          sudo apt install -y npm
+          sudo npm -v
 
   lists3bucket:
     runs-on: ubuntu-latest
