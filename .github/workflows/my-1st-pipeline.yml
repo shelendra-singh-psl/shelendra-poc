@@ -10,7 +10,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout"
-        uses: actions/checkout@v2
+        run: |
+          git@github.com:shelendra-singh-psl/shelendra-poc.git
+          cd shelendra-poc
+          git branch
+     #   uses: actions/checkout@v2
       - name: Install aws Cli
         run: |
           sudo apt update
@@ -20,6 +24,8 @@ jobs:
           aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
           aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
           aws configure set region $AWS_DEFAULT_REGION
+          git@github.com:shelendra-singh-psl/shelendra-poc.git
+          cd shelendra-poc
           git branch
 
   lists3bucket:
