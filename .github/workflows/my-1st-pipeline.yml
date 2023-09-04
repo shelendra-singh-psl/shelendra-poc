@@ -31,6 +31,16 @@ jobs:
           echo "NPM Version"
           sudo npm -v
 
+  Build-Webapp:
+    runs-on: ubuntu-latest
+    needs: Pre-requisite
+    steps:
+      - name: "Build and install dependencies"
+        run: |
+          sudo yarn install
+          sudo yarn build
+          
+
   lists3bucket:
     runs-on: ubuntu-latest
     needs: Pre-requisite
