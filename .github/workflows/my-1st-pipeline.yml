@@ -21,6 +21,8 @@ jobs:
           aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
           aws configure set region $AWS_DEFAULT_REGION
           git branch
+          git checkout develop
+          
 
   lists3bucket:
     runs-on: ubuntu-latest
