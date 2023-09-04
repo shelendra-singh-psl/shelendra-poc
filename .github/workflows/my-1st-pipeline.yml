@@ -22,8 +22,13 @@ jobs:
           aws configure set region $AWS_DEFAULT_REGION
           git branch
           sudo apt install -y nodejs
-          sudo node -v
           sudo apt install -y npm
+          sudo npm install --global yarn
+          echo "Yarn Version"
+          sudo yarn --version
+          echo "Node Version"   
+          sudo node -v
+          echo "NPM Version"
           sudo npm -v
 
   lists3bucket:
