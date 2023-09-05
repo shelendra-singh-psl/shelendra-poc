@@ -7,21 +7,23 @@ env:
 
 jobs:
   Pre-requisite:
-    runs-on: ubuntu-22.04
+    runs-on: ubuntu-latest
     steps:
       - name: "Checkout Git Repo"
-        uses: actions/checkout@v2    
-      - name: "Setup Node 16 version"
+        uses: actions/checkout@v2
+      - name: "Install a specific Node.js version"
         uses: actions/setup-node@v3
         with:
           node-version: 16
-      - name: "Check Node and NPM version"
-        run: | 
+      - name: "Install Required Packages"
+        run: |
+          echo "AWS Version"
+          aws --version
+          aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+          aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+          aws configure set region $AWS_DEFAULT_REGION
+          echo "Node Version"
           node -v
-          npm -v  
-
-      
-     
-
-
-  
+          echo "NPM Version"
+          npm -v
+          git branch
