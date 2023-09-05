@@ -14,7 +14,7 @@ jobs:
       - name: "Install a specific Node.js version"
         uses: actions/setup-node@v2
         with:
-          node-version: 17
+          node-version: 16
       - name: "Setup AWS CLI"
         run: |
           echo "AWS Version"
