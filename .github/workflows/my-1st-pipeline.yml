@@ -10,21 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: "Checkout"
-        uses: actions/checkout@v2
-      - name: Install aws Cli
-        run: |
-          echo "AWS Version"
-          aws --version
-          aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
-          aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
-          aws configure set region $AWS_DEFAULT_REGION
-          sudo apt install -y nodejs
-          sudo apt install -y npm
+      - uses: actions/checkout@v2
+      - uses: actions/setup-node@v3
+        with:
+          node-version: '14'
+      - run: |
           echo "Node Version"
           sudo node -v
           echo "NPM Version"
           sudo npm -v
-          git branch
+
 
 
   
