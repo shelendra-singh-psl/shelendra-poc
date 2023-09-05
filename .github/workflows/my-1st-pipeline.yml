@@ -8,13 +8,17 @@ env:
 jobs:
   Pre-requisite:
     runs-on: ubuntu-22.04
-    steps:     
-      - uses: actions/checkout@v2    
-      - uses: actions/setup-node@v3
+    steps:
+      - name: "Checkout Git Repo"
+        uses: actions/checkout@v2    
+      - name: "Setup Node 16 version"
+        uses: actions/setup-node@v3
         with:
           node-version: 16
-      - run: node -v
-      - run: npm -v  
+      - name: "Check Node and NPM version"
+        run: | 
+          node -v
+          npm -v  
 
       
      
