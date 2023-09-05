@@ -9,17 +9,24 @@ jobs:
   Pre-requisite:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout repository
+      - name: "Checkout Git Repo"
         uses: actions/checkout@v2
-      - name: Set up Node.js
+      - name: "Install a specific Node.js version"
         uses: actions/setup-node@v2
         with:
           node-version: 17
-      - name: Check Node Version
+      - name: "Setup AWS CLI"
         run: |
-          node -v
-          npm -v
-
+          echo "AWS Version"
+          aws --version
+          aws configure set aws_access_key_id $AWS_ACCESS_KEY_ID
+          aws configure set aws_secret_access_key $AWS_SECRET_ACCESS_KEY
+          aws configure set region $AWS_DEFAULT_REGION
+          echo "Node Version"
+          sudo node -v
+          echo "NPM Version"
+          sudo npm -v
+          git branch
 
 
   
